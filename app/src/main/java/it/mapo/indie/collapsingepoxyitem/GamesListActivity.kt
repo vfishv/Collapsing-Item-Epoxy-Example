@@ -27,9 +27,9 @@ class GamesListActivity : AppCompatActivity() {
         binding.list.layoutManager = LinearLayoutManager(this)
         binding.list.adapter = gamesListController.adapter
 
-        viewModel.gamesLiveData.observe(this, Observer { container ->
+        viewModel.gamesLiveData.observe(this) { container ->
             gamesListController.setData(container)
-        })
+        }
     }
 
 
